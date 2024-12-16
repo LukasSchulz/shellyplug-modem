@@ -5,7 +5,7 @@ After=syslog.target network.target
 [Service]
 Type=simple
 WorkingDirectory={{ venv_home }}
-ExecStart={{ venv_home }}/python main.py
+ExecStart={{ venv_home }}.venv/bin/python main.py
 Restart=always
 
 [Install]
