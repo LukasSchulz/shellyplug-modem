@@ -20,9 +20,10 @@ shelly_modem = ShellyPy.Shelly("192.168.178.96")
 if __name__ == "__main__":
   while True:
     if not is_connected(REMOTE_SERVER):
+       print("Internetverbindung verloren, Modem wird gleich neugestartet.")
        shelly_modem.relay(0, turn=False)
        time.sleep(5)
        shelly_modem.relay(0, turn=True)
-       print("Internetverbindung verloren, Modem neugestartet")
+       print("Modem neugestartet")
     print("Warte 120s vor nächstem Internet-Check")
     time.sleep(120)
