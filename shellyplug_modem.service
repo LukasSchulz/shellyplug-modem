@@ -1,0 +1,12 @@
+[Unit]
+Description=Modem-Restart-Service
+After=syslog.target network.target
+
+[Service]
+Type=simple
+WorkingDirectory={{ venv_home }}
+ExecStart={{ venv_home }}/python main.py
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
